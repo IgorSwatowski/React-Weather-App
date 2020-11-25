@@ -1,49 +1,63 @@
 import React from "react";
+import styled from 'styled-components'
+
+const Weather = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	margin-top: 16px;
+`
+const NameOfData = styled.p`
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+`
 
 const WeatherContent = props => (
-	<div className="weather">
+	<Weather>
 		{ 
 			props.city && props.country && 
-			<p className="weather-key-number"> Location: 
+			<NameOfData> Location: 
 				<span className="weather-value"> 
 				{ props.city }, 
 				{ props.country }
 				</span>
-			</p>  
+			</NameOfData>  
 		}
 		{ 
 			props.temperature && 
-			<p className="weather-key-number"> Temperature: 
+			<NameOfData> Temperature:  
 				<span className="weather-value"> 
 					{ props.temperature }	
 				</span>
-			</p> 
+			</NameOfData> 
 		}
 		{ 
 			props.humidity && 
-			<p className="weather-key-number"> Humidity: 
+			<NameOfData> Humidity: 
 				<span className="weather-value">
 					{ props.humidity } 
 				</span>
-			</p> 
+			</NameOfData> 
 		}
 		{ 
 			props.description && 
-			<p className="weather-key-number"> Conditions: 
+			<NameOfData> Conditions: 
 				<span className="weather-value"> 
 					{ props.description } 
 				</span>
-			</p> 
+			</NameOfData> 
 		}
 		{ 
 			props.error && 
-			<p className="weather-key-number">
+			<NameOfData>
 				<span className="weather-value"> 
 					{ props.error } 
 				</span>
-			</p> 
+			</NameOfData> 
 		}
-	</div>
+	</Weather>
 );
 
 export default WeatherContent;

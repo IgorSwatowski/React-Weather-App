@@ -1,10 +1,28 @@
 import React from "react";
+import styled from 'styled-components'
+
+const InfoTopWrapper = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+`
+const TitleContainerTop = styled.h1`
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+`
+const TitleContainerBottom = styled.h3`
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin-top: -19px;
+`
 
 const Titles = () => (
-	<div>
-		<h1 className="title-container-title">Find your weather now.</h1>
-		<p className="title-container-subtitle">Do you want to find your city temperature? Let's go.</p>
-	</div>
+	<InfoTopWrapper>
+		<TitleContainerTop>Find your weather now.</TitleContainerTop>
+		<TitleContainerBottom>Do you want to find your city temperature? Let's go.</TitleContainerBottom>
+	</InfoTopWrapper>
 );
 
 export default Titles;
